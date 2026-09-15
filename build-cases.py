@@ -32,6 +32,8 @@ for index,c in enumerate(cases):
   gallery=f'<section class="case-gallery section" id="screens"><div class="section-heading"><h2>The interface.</h2><span class="eyebrow">SELECTED SCREENS</span></div><figure class="phone-overlap"><div class="case-phone-stack">{phones}</div><figcaption class="stack-captions">{captions}</figcaption></figure></section>'
  if c.get('gallery_template'):
   gallery=(root.parent/'templates'/c['gallery_template']).read_text()
+ if c['slug']=='beeline-b2b':
+  gallery+=(root.parent/'templates'/'b2b-details.html').read_text()
  steps=''.join(f'<div class="case-detail"><span class="eyebrow">0{i+1}</span><h3>{escape(title)}</h3><p>{escape(body)}</p></div>' for i,(title,body) in enumerate(c['details']))
  figma_link=f'<a class="case-button" href="{figma+c["node"]}" target="_blank" rel="noopener noreferrer">View in Figma <span aria-hidden="true">↗</span></a>' if c['node'] else ''
  screens_link='<a href="#screens">Screens</a>' if c['images'] else ''
