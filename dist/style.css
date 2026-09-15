@@ -8,11 +8,3 @@
 
 .hero-identity>span{display:block}.hero-identity .hero-name{font-size:12px;letter-spacing:1.5px;margin-bottom:12px;color:#e1e3dc}.hero-actions{display:flex;flex-direction:column;align-items:center;gap:14px}.hero-actions .video-toggle{width:44px;height:44px}@media(max-width:700px){.hero-bottom>.hero-actions{grid-column:2;grid-row:1 / 3}.hero-identity .hero-name{font-size:12px;margin-bottom:9px}}
 .project-image.atom{background-color:#101a22;background-image:linear-gradient(90deg,rgba(7,14,21,.74),rgba(7,14,21,.18) 70%),url('/assets/atom-interior.jpg');background-size:cover;background-position:center 55%;color:#fff}.project-image.atom .atom-word{color:#fff;opacity:.08}.project-image.atom .image-caption{color:#fff;text-shadow:0 2px 20px #0006}.project-image.atom .image-top{color:#e8edef}@media(max-width:700px){.project-image.atom{background-position:58% center;background-image:linear-gradient(90deg,rgba(7,14,21,.76),rgba(7,14,21,.3)),url('/assets/atom-interior.jpg')}}
-
-/* Bird in the hero's selected-work link. */
-.bird-icon{display:block;overflow:visible}
-.bird-wing{transform-origin:20px 23px}
-.round-link:is(:hover,:focus-visible) .bird-wing-left{animation:bird-flap-left .65s ease-in-out infinite}
-.round-link:is(:hover,:focus-visible) .bird-wing-right{animation:bird-flap-right .65s ease-in-out infinite}
-@keyframes bird-flap-left{0%,100%{transform:rotate(0deg)}50%{transform:rotate(-48deg)}}
-@keyframes bird-flap-right{0%,100%{transform:rotate(0deg)}50%{transform:rotate(48deg)}}
