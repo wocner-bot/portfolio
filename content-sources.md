@@ -18,3 +18,24 @@ The original home design and slogan are preserved. Other case content is unchang
 Frame: https://www.webmobilefirst.com/en/mockups/apple-iphone-18-pro-2026/
 PNG: https://www.webmobilefirst.com/img/mockups/mockup-apple-iphone-18-pro-2026-transparent.png
 Third-party iPhone 18 Pro representation, 389 × 800 px, with transparent screen and background. Source permits personal and commercial use within designs, without attribution; do not redistribute or sell the standalone frame. Original application screenshots are unmodified and composed with the frame in HTML/CSS. Automotive HMI screens retain their original presentation.
+
+## Marketing Platform and Sound Stream — 2026-09-15
+
+Original frames exported using Figma's authenticated browser UI. The Figma MCP monthly call limit was reached; browser export remained available.
+
+File: https://www.figma.com/design/ZvkPFit2LyQPYbr1n8xsj8/Alexander-Grenkov.-Product-Designer--Copy-
+
+Marketing Platform page: `11880:117898`.
+- `marketing-campaigns.png`: “Мои кампании”, node `11881:128214`, original 2x PNG.
+- `marketing-audience.jpg`: “Новая кампания”, audience parameters and geography, original JPEG.
+- `marketing-channels.jpg`: “Новая кампания”, advertising channel selection, original JPEG.
+
+Sound Stream page: `13847:209`.
+- Intro frame `13848:70335` describes an iOS-based redesign concept following research; core screens, typography, base colors and card principles; a UI-kit later developed into an app/web design system.
+- `sound-stream-home.png`: “Главная страница”, slide `13848:57033`.
+- `sound-stream-new.png`: “Страница «Новинки»”.
+- `sound-stream-catalog.png`: “Страница «Каталог»”.
+- `sound-stream-library.png`: “Страница «Моя медиатека»”, slide `13848:59188`.
+- `sound-stream-typography.png`: “Типографика”.
+- Original slide PNGs retained, including their original screen silhouettes; no additional device frames added.
+- English case copy summarizes these source slides. No dates, seniority or business results are inferred.
