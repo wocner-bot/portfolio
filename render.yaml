@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: wocnerg-portfolio
+    runtime: static
+    buildCommand: test -f dist/index.html
+    staticPublishPath: dist
