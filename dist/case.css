@@ -11,15 +11,28 @@
 .case-hero h1{font-size:clamp(28px,3.2vw,48px);line-height:1.2;letter-spacing:-.035em}@media(max-width:700px){.case-hero h1{font-size:28px}}
 
 /* Covers reuse the exact homepage artwork. */
-.case-hero .case-cover{height:420px;margin:0 0 32px;border-radius:8px;color:#181916}
-.case-hero .case-cover.atom{color:#fff}
-.case-hero .case-cover.sound-stream{color:#ece7fa}
-.case-hero .case-cover .phone-pair{padding-top:38px;padding-bottom:52px}
-.case-hero .case-cover.beeline,.case-hero .case-cover.marketing,.case-hero .case-cover.cargo{padding:32px}
-.case-hero .case-cover>img{max-height:100%}
-@media(max-width:700px){.case-hero .case-cover{height:320px;margin-bottom:24px}.case-hero .case-cover.beeline,.case-hero .case-cover.marketing,.case-hero .case-cover.cargo{padding:22px}.case-hero .case-cover.atom .image-caption{font-size:38px}.case-hero .case-cover .phone-pair{padding:32px 22px 48px}}
+.case-preview .case-cover{height:420px;margin:0 0 32px;border-radius:8px;color:#181916}
+.case-preview .case-cover.atom{color:#fff}
+.case-preview .case-cover.sound-stream{color:#ece7fa}
+.case-preview .case-cover .phone-pair{padding-top:38px;padding-bottom:52px}
+.case-preview .case-cover.beeline,.case-preview .case-cover.marketing,.case-preview .case-cover.cargo{padding:32px}
+.case-preview .case-cover>img{max-height:100%}
+@media(max-width:700px){.case-preview .case-cover{height:320px;margin-bottom:24px}.case-preview .case-cover.beeline,.case-preview .case-cover.marketing,.case-preview .case-cover.cargo{padding:22px}.case-preview .case-cover.atom .image-caption{font-size:38px}.case-preview .case-cover .phone-pair{padding:32px 22px 48px}}
 
 /* Readable, consistent captions across all project galleries. */
 .case-page figcaption,.case-page .stack-captions p{font-size:19px;line-height:1.65;color:#505349}
 .case-page figcaption>a,.case-page .screens-grid figcaption>a,.case-page .stack-captions a{display:block;font-size:17px;line-height:1.5;font-weight:500;margin:10px 0 0;text-decoration:underline;text-underline-offset:4px;white-space:normal}
 @media(max-width:700px){.case-page figcaption,.case-page .stack-captions p{font-size:18px}}
+
+/* Full-viewport illustrated case banners; original UI is shown below. */
+.case-hero.case-hero-illustrated{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:flex-end;min-height:calc(100svh - 100px);padding:32px var(--pad) 60px;background:#101419;overflow:hidden}
+.case-hero-illustrated>.case-hero-background{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:-2}
+.case-hero-illustrated::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(5,9,15,.88),rgba(5,9,15,.56) 45%,rgba(5,9,15,.06) 85%),linear-gradient(0deg,rgba(5,9,15,.62),transparent 65%)}
+.case-hero-illustrated .case-breadcrumb{margin:0 0 auto;padding-bottom:50px;color:#f0f2f4}
+.case-hero-illustrated>.eyebrow{margin:24px 0 18px;color:var(--case-accent)}
+.case-hero-illustrated h1{font-size:clamp(32px,4.2vw,66px);line-height:1.1;max-width:760px;margin:0 0 32px;color:#fff;text-wrap:balance}
+.case-hero-illustrated .case-intro{display:block;border:0;padding:0;max-width:600px}
+.case-hero-illustrated .case-intro h2{font-size:22px;margin:0 0 14px;color:#fff}
+.case-hero-illustrated .case-intro p{font-size:18px;line-height:1.6;color:#edf0f3}
+.case-preview{padding-top:48px;padding-bottom:0}.case-preview .case-cover{margin-bottom:0}
+@media(max-width:700px){.case-hero.case-hero-illustrated{min-height:calc(100svh - 78px);padding-top:26px;padding-bottom:38px}.case-hero-illustrated>.case-hero-background{object-position:65% center}.case-hero-illustrated::before{background:linear-gradient(0deg,rgba(5,9,15,.96),rgba(5,9,15,.72) 55%,rgba(5,9,15,.32))}.case-hero-illustrated h1{font-size:34px;margin-bottom:24px;max-width:100%}.case-hero-illustrated .case-intro h2{font-size:21px}.case-hero-illustrated .case-intro p{font-size:17px;line-height:1.55}.case-preview{padding-top:28px}}
