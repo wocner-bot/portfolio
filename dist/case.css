@@ -9,3 +9,12 @@
 .case-sound-stream{--case-accent:#d3baf8;--case-surface:#ece5f5}.case-sound-stream .b2b-design-image{padding:0;background:#000}.case-sound-stream .b2b-design-wide .b2b-design-image{max-height:none;overflow:visible}@media(max-width:700px){.case-design-extension .section-heading{align-items:flex-start;flex-direction:column;gap:14px}}
 
 .case-hero h1{font-size:clamp(28px,3.2vw,48px);line-height:1.2;letter-spacing:-.035em}@media(max-width:700px){.case-hero h1{font-size:28px}}
+
+/* Covers reuse the exact homepage artwork. */
+.case-hero .case-cover{height:420px;margin:0 0 32px;border-radius:8px;color:#181916}
+.case-hero .case-cover.atom{color:#fff}
+.case-hero .case-cover.sound-stream{color:#ece7fa}
+.case-hero .case-cover .phone-pair{padding-top:38px;padding-bottom:52px}
+.case-hero .case-cover.beeline,.case-hero .case-cover.marketing,.case-hero .case-cover.cargo{padding:32px}
+.case-hero .case-cover>img{max-height:100%}
+@media(max-width:700px){.case-hero .case-cover{height:320px;margin-bottom:24px}.case-hero .case-cover.beeline,.case-hero .case-cover.marketing,.case-hero .case-cover.cargo{padding:22px}.case-hero .case-cover.atom .image-caption{font-size:38px}.case-hero .case-cover .phone-pair{padding:32px 22px 48px}}
