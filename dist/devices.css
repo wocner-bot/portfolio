@@ -30,3 +30,10 @@
 .project-image.sound-stream .phone-pair{padding-top:74px;padding-bottom:60px}
 @media(max-width:700px){.project-image.sound-stream{height:380px}.project-image.sound-stream .phone-pair{padding:70px 26px 52px}}
 .project-image.sound-stream .sound-device>.device-frame{padding:0}
+
+/* Cargo and Sound Stream continue the same two-column project grid. */
+.work .project-grid>.sound-stream-project{margin-top:0}
+.project-grid .project-image.sound-stream,.project-grid .project-image.cargo{height:400px}
+.project-image.cargo{display:flex;align-items:center;justify-content:center;padding:66px 30px 38px}
+.project-image.cargo>img{height:auto;max-height:100%;object-fit:contain;border-radius:5px;filter:drop-shadow(0 16px 20px #0002)}
+@media(max-width:700px){.project-grid .project-image.sound-stream,.project-grid .project-image.cargo{height:330px}.project-image.cargo{padding:64px 22px 38px}}
