@@ -28,13 +28,6 @@ for case in cases:
  case['title'] = product_titles[case['slug']]
 favicon=re.search(r'<link rel="icon"[^>]+>',home).group()
 for index,c in enumerate(cases):
- # Reuse the homepage artwork so cover assets and phone compositions stay in sync.
- match=re.search(r'<a class="project-image '+re.escape(c['theme'])+r'"[^>]*>(.*?)</a>',home,re.S)
- if not match:
-  raise ValueError('Missing homepage artwork for '+c['slug'])
- artwork=re.sub(r'<div class="image-top">.*?</div>|<span class="project-open"[^>]*>.*?</span>','',match.group(1),flags=re.S)
- artwork=artwork.replace('loading="lazy"','loading="eager"')
- cover=f'<div class="case-cover project-image {c["theme"]}">{artwork}</div>'
  prev=cases[(index-1)%len(cases)];nxt=cases[(index+1)%len(cases)]
  period_fact=f'<div><dt>PERIOD</dt><dd>{escape(c["period"])}</dd></div>' if c.get('period') else ''
  related=f'<section class="case-related section"><p class="eyebrow">RELATED AUTOMOTIVE WORK</p><h2>{escape(c["related_title"])}</h2><p>{escape(c["related_body"])}</p></section>' if c.get('related_title') else ''
@@ -63,7 +56,6 @@ for index,c in enumerate(cases):
 <header class="header"><a href="/" class="brand" aria-label="Wocnerg home">wocnerg<span>®</span></a><nav aria-label="Main navigation"><a href="/#work">Selected work</a><a href="/#about">About</a><a class="contact-nav" href="https://t.me/wocnerg" target="_blank" rel="noopener noreferrer">Let’s talk ↗</a></nav></header>
 <main><section class="case-hero case-hero-illustrated"><img class="case-hero-background" src="/assets/hero-{c['slug']}-generated.jpg" alt="" aria-hidden="true" fetchpriority="high" decoding="async"><div class="case-breadcrumb"><a href="/#work">← All projects</a></div><p class="eyebrow">{escape(c['category'])}</p><h1>{c['title']}</h1><div class="case-intro"><h2>{escape(c['name'])}</h2><p>{escape(c['intro'])}</p></div></section>
 <div class="case-toolbar"><nav aria-label="On this page"><a href="#overview">Overview</a><a href="#solution">Approach</a>{screens_link}<a href="#outcome">Outcome</a></nav>{figma_link}</div>
-<section class="case-preview section" aria-label="Product interface preview">{cover}</section>
 <section class="case-overview section" id="overview"><aside class="case-facts"><dl>{period_fact}<div><dt>ROLE</dt><dd>{escape(c['role'])}</dd></div><div><dt>FOCUS</dt><dd>{escape(c['focus'])}</dd></div></dl></aside><div class="case-prose"><p class="eyebrow">THE CHALLENGE</p><h2>What needed to change.</h2><p>{escape(c['challenge'])}</p></div></section>
 <section class="case-solution section" id="solution"><div class="case-prose"><p class="eyebrow">THE APPROACH</p><h2>From problem to product.</h2><p>{escape(c['solution'])}</p></div><div class="case-details">{steps}</div></section>
 {gallery}
