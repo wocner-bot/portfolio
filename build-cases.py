@@ -14,6 +14,18 @@ cases=[
  dict(slug='cargo-monitoring',name='Cargo Transport Monitoring',title='Complex operations.<br>Clear decisions.',category='LOGISTICS × OPERATIONS',role='Product Designer',focus='Operational UX · Automation',node=None,theme='cargo',metric='+40%',metric_label='Process automation',intro='Redesigning operational workflows in a cargo transport monitoring system to reduce manual work.',challenge='Reduce manual operations and improve operational efficiency in cargo transport monitoring.',solution='Redesigned key user flows, removed friction points and increased the level of process automation.',details=[('Workflow simplification','Reworked key user flows to reduce friction in operational tasks.'),('Less manual work','Focused the redesign on increasing the automation of existing processes.')],outcome='Achieved a 40% increase in process automation.',images=[('cargo.png','Cargo monitoring interface with a violation record, vehicle details and measurement data.')]),
  dict(slug='sound-stream',name='Sound Stream',title='Find your next<br>great listen.',category='AUDIO × MOBILE EXPERIENCE',role='Product design',focus='App redesign · UI-kit · Design system',node='13847-209',theme='sound-stream',metric='UI-kit',metric_label='Foundation for app and web',intro='A redesign concept for an audio app, connecting discovery, new episodes and a personal library through a consistent visual language.',challenge='Address the interface problems identified through research and develop an updated app concept based on iOS.',solution='Redesigned the core screens, defined typography and base colors, and established principles for content cards. The concept became a UI-kit that was later developed into a design system for the apps and web platform.',details=[('Listening journeys','Connected editorial recommendations, new episodes, catalog browsing and a personal library.'),('Reusable design foundations','Defined typography, color principles and core card types to support a consistent experience.')],outcome='The design concept and UI-kit provided the foundation for a design system spanning the apps and web platform.',images=[('sound-stream-home.png','Sound Stream home screen and recommendations.')],gallery_template='sound-stream-details.html')
 ]
+# Use descriptive product headings instead of promotional slogans.
+product_titles = {
+ 'atom': 'AUTOMOTIVE · AI ASSISTANT · DESIGN LEAD',
+ 'beeline-b2b': 'COMMERCE · DESIGN SYSTEMS',
+ 'national-parking': 'MOBILITY · PRODUCT DESIGN',
+ 'beeline-marketing': 'B2B · AUDIENCE ENGAGEMENT',
+ 'beeline-pricing': 'TELECOM · CONVERSION',
+ 'cargo-monitoring': 'LOGISTICS · PRODUCT DESIGN',
+ 'sound-stream': 'AUDIO · MOBILE EXPERIENCE · UI-KIT',
+}
+for case in cases:
+ case['title'] = product_titles[case['slug']]
 favicon=re.search(r'<link rel="icon"[^>]+>',home).group()
 for index,c in enumerate(cases):
  prev=cases[(index-1)%len(cases)];nxt=cases[(index+1)%len(cases)]
