@@ -23,3 +23,6 @@
 .work .project-info h3,.work .cargo-copy h3{font-size:22px;line-height:1.3;letter-spacing:-.35px}@media(max-width:700px){.work .project-info h3,.work .cargo-copy h3{font-size:20px}}
 
 .work .featured .atom-capabilities{margin:0;padding-left:22px;flex:1 1 340px;color:#d3d7c9;font-size:18px;font-weight:400;line-height:1.6;letter-spacing:normal}.work .featured .atom-capabilities li{font:inherit;margin:0 0 6px}.work .featured .atom-capabilities li:last-child{margin-bottom:0}.work .featured .atom-capabilities li::marker{color:var(--lime)}@media(max-width:700px){.work .featured .atom-capabilities{flex-basis:100%}}
+
+.about-identity .portrait{width:280px;max-width:100%;height:auto;aspect-ratio:17/21;object-fit:cover}
+@media(max-width:700px){.about-identity{grid-template-columns:120px minmax(0,1fr)}.about-identity .portrait{width:120px;height:auto;aspect-ratio:17/21}}
