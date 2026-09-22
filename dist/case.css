@@ -36,3 +36,18 @@
 .case-hero-illustrated .case-intro p{font-size:18px;line-height:1.6;color:#edf0f3}
 .case-preview{padding-top:48px;padding-bottom:0}.case-preview .case-cover{margin-bottom:0}
 @media(max-width:700px){.case-hero.case-hero-illustrated{min-height:calc(100svh - 78px);padding-top:26px;padding-bottom:38px}.case-hero-illustrated>.case-hero-background{object-position:65% center}.case-hero-illustrated::before{background:linear-gradient(0deg,rgba(5,9,15,.96),rgba(5,9,15,.72) 55%,rgba(5,9,15,.32))}.case-hero-illustrated h1{font-size:34px;margin-bottom:24px;max-width:100%}.case-hero-illustrated .case-intro h2{font-size:21px}.case-hero-illustrated .case-intro p{font-size:17px;line-height:1.55}.case-preview{padding-top:28px}}
+
+/* One reading column aligned with the hero's left edge. */
+.case-page .case-overview,.case-page .case-details,.case-page .case-outcome,.case-page .case-facts dl,.case-page .atom-context,.case-page .atom-feature-heading,.case-page .atom-notes,.case-page .atom-mirror-layout,.case-page .b2b-design-grid,.case-page .case-design-grid,.case-page .stack-captions,.case-page .case-pagination{grid-template-columns:minmax(0,1fr)}
+.case-page .case-overview{gap:40px}
+.case-page .case-facts dl{display:grid;gap:24px}
+.case-page .case-facts dl>div{margin:0;max-width:760px}
+.case-page .case-details{gap:32px}
+.case-page .case-detail h3{margin-top:0}
+.case-page .case-prose,.case-page .case-prose>p,.case-page .case-detail>p,.case-page .case-related>p,.case-page .case-outcome>p,.case-page .atom-context>div,.case-page .atom-feature-heading>p,.case-page .atom-notes>div{max-width:760px}
+.case-page .atom-context,.case-page .atom-feature-heading{gap:24px}
+.case-page .atom-gallery figcaption{display:block}
+.case-page .section-heading{align-items:flex-start;flex-direction:column;gap:14px}
+.case-page .case-pagination>a:last-child{text-align:left}
+.case-page .b2b-figma-callout{margin-left:calc(-1 * var(--pad));margin-right:calc(-1 * var(--pad));padding-left:var(--pad);padding-right:var(--pad);border-radius:0}
+.case-page .b2b-figma-footer{flex-direction:column;gap:12px}
