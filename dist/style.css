@@ -50,7 +50,7 @@
 .hero-refined h1#intro-title>span:nth-child(2){margin-left:1.39em;color:#fff}
 
 /* Generated project backgrounds sit behind the original interface artwork. */
-.work .project-image.atom{background-image:linear-gradient(180deg,rgba(5,9,15,.78),rgba(5,9,15,.5) 45%,rgba(5,9,15,.65)),url("/assets/hero-atom-generated.jpg");background-size:cover;background-position:center;color:#fff}
+.work .project-image.atom{background-image:linear-gradient(90deg,rgba(7,14,21,.74),rgba(7,14,21,.18) 70%),url("/assets/atom-interior.jpg");background-size:cover;background-position:center 55%;color:#fff}
 .work .project-image.beeline{background-image:linear-gradient(180deg,rgba(5,9,15,.78),rgba(5,9,15,.5) 45%,rgba(5,9,15,.65)),url("/assets/hero-beeline-b2b-generated.jpg");background-size:cover;background-position:center;color:#fff}
 .work .project-image.parking{background-image:linear-gradient(180deg,rgba(5,9,15,.78),rgba(5,9,15,.5) 45%,rgba(5,9,15,.65)),url("/assets/hero-national-parking-generated.jpg");background-size:cover;background-position:center;color:#fff}
 .work .project-image.marketing{background-image:linear-gradient(180deg,rgba(5,9,15,.78),rgba(5,9,15,.5) 45%,rgba(5,9,15,.65)),url("/assets/hero-beeline-marketing-generated.jpg");background-size:cover;background-position:center;color:#fff}
