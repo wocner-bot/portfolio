@@ -42,3 +42,9 @@
 .work .project-image.beeline,.work .project-image.marketing,.work .project-image.cargo{justify-content:flex-start}
 .work .project-image.beeline>img,.work .project-image.marketing>img,.work .project-image.cargo>img{width:85%;object-position:left center}
 .work .project-image .phone-pair{justify-content:flex-start}
+
+/* Soft light behind the homepage interface artwork. */
+.work .project-grid .project-image{isolation:isolate}
+.work .project-grid .project-image::before{content:"";position:absolute;inset:34px 10% 12px -10%;background:radial-gradient(ellipse at 42% 52%,rgba(240,246,255,.52) 0%,rgba(226,237,250,.28) 32%,rgba(225,237,255,.08) 55%,transparent 74%);filter:blur(18px);pointer-events:none;z-index:0}
+.work .project-grid .project-image>img,.work .project-grid .project-image>.phone-pair{position:relative;z-index:1}
+.work .project-grid .project-open{z-index:3}
