@@ -46,3 +46,5 @@
 .hero-refined .experience-strip{padding:24px 0 28px;border-color:#ffffff26}
 @media(max-width:900px){.hero-composition{gap:32px;grid-template-columns:1fr 1fr;padding:56px 0 44px}.hero-refined h1#intro-title{font-size:5.8vw}.hero-refined .hero-domains{font-size:17px}.hero-refined .hero-experience>p{display:block}.hero-refined .hero-experience>p>span{max-width:none;margin-top:8px}}
 @media(max-width:700px){.hero-composition{grid-template-columns:1fr;gap:42px;padding:44px 0 28px;min-height:0}.hero-refined h1#intro-title{font-size:clamp(38px,10.5vw,70px);margin:0 0 16px}.hero-refined .hero-role{font-size:23px}.hero-work-link{margin-top:28px;padding:14px 20px}.hero-refined .hero-experience>p{display:flex;gap:16px;margin-bottom:22px}.hero-refined .hero-experience strong{font-size:36px}.hero-refined .hero-experience>p>span{max-width:140px;font-size:15px;margin:0}.hero-refined .hero-domains{font-size:17px;gap:10px}.hero-refined .hero-actions{justify-content:flex-end;margin-top:16px}.hero-refined::before{background:rgba(10,14,15,.83)}}
+
+.hero-refined h1#intro-title>span:nth-child(2){margin-left:1.39em;color:#fff}
