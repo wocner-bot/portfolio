@@ -14,18 +14,10 @@ cases=[
  dict(slug='cargo-monitoring',name='Cargo Transport Monitoring',title='Complex operations.<br>Clear decisions.',category='LOGISTICS × OPERATIONS',role='Product Designer',focus='Operational UX · Automation',node=None,theme='cargo',metric='+40%',metric_label='Process automation',intro='Redesigning operational workflows in a cargo transport monitoring system to reduce manual work.',challenge='Reduce manual operations and improve operational efficiency in cargo transport monitoring.',solution='Redesigned key user flows, removed friction points and increased the level of process automation.',details=[('Workflow simplification','Reworked key user flows to reduce friction in operational tasks.'),('Less manual work','Focused the redesign on increasing the automation of existing processes.')],outcome='Achieved a 40% increase in process automation.',images=[('cargo.png','Cargo monitoring interface with a violation record, vehicle details and measurement data.')]),
  dict(slug='sound-stream',name='Sound Stream',title='Find your next<br>great listen.',category='AUDIO × MOBILE EXPERIENCE',role='Product design',focus='App redesign · UI-kit · Design system',node='13847-209',theme='sound-stream',metric='UI-kit',metric_label='Foundation for app and web',intro='A redesign concept for an audio app, connecting discovery, new episodes and a personal library through a consistent visual language.',challenge='Address the interface problems identified through research and develop an updated app concept based on iOS.',solution='Redesigned the core screens, defined typography and base colors, and established principles for content cards. The concept became a UI-kit that was later developed into a design system for the apps and web platform.',details=[('Listening journeys','Connected editorial recommendations, new episodes, catalog browsing and a personal library.'),('Reusable design foundations','Defined typography, color principles and core card types to support a consistent experience.')],outcome='The design concept and UI-kit provided the foundation for a design system spanning the apps and web platform.',images=[('sound-stream-home.png','Sound Stream home screen and recommendations.')],gallery_template='sound-stream-details.html')
 ]
-# Use descriptive product headings instead of promotional slogans.
-product_titles = {
- 'atom': 'AUTOMOTIVE · AI ASSISTANT · DESIGN LEAD',
- 'beeline-b2b': 'COMMERCE · DESIGN SYSTEMS',
- 'national-parking': 'MOBILITY · PRODUCT DESIGN',
- 'beeline-marketing': 'B2B · AUDIENCE ENGAGEMENT',
- 'beeline-pricing': 'TELECOM · CONVERSION',
- 'cargo-monitoring': 'LOGISTICS · PRODUCT DESIGN',
- 'sound-stream': 'AUDIO · MOBILE EXPERIENCE · UI-KIT',
-}
+# Use actual product names so recruiters can identify the work immediately.
 for case in cases:
- case['title'] = product_titles[case['slug']]
+ case['title'] = escape(case['name'])
+header=(root.parent/'templates/site-header.html').read_text()
 favicon=re.search(r'<link rel="icon"[^>]+>',home).group()
 for index,c in enumerate(cases):
  prev=cases[(index-1)%len(cases)];nxt=cases[(index+1)%len(cases)]
@@ -51,26 +43,25 @@ for index,c in enumerate(cases):
  steps=''.join(f'<div class="case-detail"><span class="eyebrow">0{i+1}</span><h3>{escape(title)}</h3><p>{escape(body)}</p></div>' for i,(title,body) in enumerate(c['details']))
  figma_link=f'<a class="case-button" href="{figma+c["node"]}" target="_blank" rel="noopener noreferrer">View in Figma <span aria-hidden="true">↗</span></a>' if c['node'] else ''
  screens_link='<a href="#screens">Screens</a>' if c['images'] else ''
- body=f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{escape(c['name'])} — WOCNERG</title><meta name="description" content="{escape(c['intro'],quote=True)}"><meta name="theme-color" content="#181916">{favicon}<link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/case.css"><link rel="stylesheet" href="/devices.css?v=20260923-align"></head><body class="case-page case-{c['theme']}">
+ cover_image={'atom':'atom-assistant-ui.png','beeline-marketing':'marketing-campaigns.png'}.get(c['slug'],c['images'][0][0])
+ if c.get('phone'):
+  cover_visual='<div class="case-cover-phones">'+''.join(device_markup(img,caption) for img,caption in c['images'])+'</div>'
+ else:
+  cover_visual=f'<img src="/assets/{cover_image}" alt="{escape(c["name"],quote=True)} — selected interface" decoding="async">'
+ cover=f'<div class="case-cover section"><div class="case-cover-art">{cover_visual}</div></div>'
+ body=f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{escape(c['name'])} — WOCNERG</title><meta name="description" content="{escape(c['intro'],quote=True)}"><meta name="theme-color" content="#151715">{favicon}<link rel="stylesheet" href="/style.css?v=editorial-1"><link rel="stylesheet" href="/case.css?v=editorial-1"><link rel="stylesheet" href="/devices.css?v=20260923-align"></head><body class="case-page case-{c['theme']}">
 <a class="skip" href="#overview">Skip to case study</a>
-<header class="header"><a href="/" class="brand" aria-label="Wocnerg home">wocnerg<span>®</span></a><nav aria-label="Main navigation"><a href="/#work">Selected work</a><a href="/#about">About</a><a class="contact-nav" href="https://t.me/wocnerg" target="_blank" rel="noopener noreferrer">Let’s talk ↗</a></nav></header>
-<main><section class="case-hero"><div class="case-breadcrumb"><a href="/#work">← All projects</a><span class="eyebrow">CASE {index+1:02d} / {len(cases):02d}</span></div><p class="eyebrow">{escape(c['category'])}</p><h1>{c['title']}</h1><div class="case-intro"><h2>{escape(c['name'])}</h2><p>{escape(c['intro'])}</p></div></section>
+{header}
+<main><section class="case-hero"><div class="case-breadcrumb"><a href="/#work">← All projects</a><span class="eyebrow">CASE {index+1:02d} / {len(cases):02d}</span></div><p class="eyebrow">{escape(c['category'])}</p><h1>{c['title']}</h1><p class="case-lede">{escape(c['intro'])}</p><dl class="case-summary"><div><dt>MY ROLE</dt><dd>{escape(c['role'])}</dd></div><div><dt>FOCUS</dt><dd>{escape(c['focus'])}</dd></div><div><dt>RESULT / DELIVERABLE</dt><dd>{escape(c['metric'])} <span>{escape(c['metric_label'])}</span></dd></div></dl></section>
+{cover}
 <div class="case-toolbar"><nav aria-label="On this page"><a href="#overview">Overview</a><a href="#solution">Approach</a>{screens_link}<a href="#outcome">Outcome</a></nav>{figma_link}</div>
-<section class="case-overview section" id="overview"><aside class="case-facts"><dl>{period_fact}<div><dt>ROLE</dt><dd>{escape(c['role'])}</dd></div><div><dt>FOCUS</dt><dd>{escape(c['focus'])}</dd></div></dl></aside><div class="case-prose"><p class="eyebrow">01 / THE CHALLENGE</p><h2>What needed to change.</h2><p>{escape(c['challenge'])}</p></div></section>
-<section class="case-solution section" id="solution"><div class="case-prose"><p class="eyebrow">02 / THE APPROACH</p><h2>From problem to product.</h2><p>{escape(c['solution'])}</p></div><div class="case-details">{steps}</div></section>
+<section class="case-overview section" id="overview"><aside class="case-facts"><dl>{period_fact}<div><dt>ROLE</dt><dd>{escape(c['role'])}</dd></div><div><dt>FOCUS</dt><dd>{escape(c['focus'])}</dd></div></dl></aside><div class="case-prose"><p class="eyebrow">01 / THE CHALLENGE</p><h2>The challenge.</h2><p>{escape(c['challenge'])}</p></div></section>
+<section class="case-solution section" id="solution"><div class="case-prose"><p class="eyebrow">02 / THE APPROACH</p><h2>My contribution.</h2><p>{escape(c['solution'])}</p></div><div class="case-details">{steps}</div></section>
 {gallery}
 {related}
 <section class="case-outcome section" id="outcome"><div><p class="eyebrow">03 / THE OUTCOME</p><h2>{escape(c['metric'])}</h2><span>{escape(c['metric_label'])}</span></div><p>{escape(c['outcome'])}</p></section>
 <nav class="case-pagination section" aria-label="More projects"><a href="/work/{prev['slug']}/"><span class="eyebrow">← PREVIOUS PROJECT</span><strong>{escape(prev['name'])}</strong></a><a href="/work/{nxt['slug']}/"><span class="eyebrow">NEXT PROJECT →</span><strong>{escape(nxt['name'])}</strong></a></nav>
-</main><footer><a href="/" class="brand">wocnerg<span>®</span></a><span>© 2026 ALEKSANDR GRENKOV</span><a href="/#work">All projects ↑</a></footer></body></html>'''
+</main><footer><a href="/" class="brand" aria-label="Aleksandr Grenkov home">ag<span>®</span></a><span>© 2026 ALEKSANDR GRENKOV</span><a href="/#work">All projects ↑</a></footer></body></html>'''
  target=root/'work'/c['slug']/'index.html';target.parent.mkdir(parents=True,exist_ok=True);target.write_text(body)
- if c['node']:
-  pattern=r'<a class="project-image '+re.escape(c['theme'])+r'"[^>]*>'
-  home=re.sub(pattern,f'<a class="project-image {c["theme"]}" href="/work/{c["slug"]}/" aria-label="Read {escape(c["name"],quote=True)} case study">',home)
-# Give the sixth project the same direct case-study destination.
-home=home.replace('<h3>Complex operations.<br>Clear decisions.</h3>','<h3><a href="/work/cargo-monitoring/">Complex operations.<br>Clear decisions.</a></h3>')
-home=home.replace('<div class="cargo-visual"><img src="/assets/cargo.png" alt="Cargo transport monitoring dashboard" loading="lazy"></div>','<a class="cargo-visual" href="/work/cargo-monitoring/" aria-label="Read Cargo Transport Monitoring case study"><img src="/assets/cargo.png" alt="Cargo transport monitoring dashboard" loading="lazy"><span class="project-open" aria-hidden="true">↗</span></a>')
-if 'class="cargo-case-link"' not in home:
- home=home.replace('<span class="result">+40%<small>process automation</small></span></div>','<span class="result">+40%<small>process automation</small></span><a class="cargo-case-link" href="/work/cargo-monitoring/">View case study →</a></div>')
-(root/'index.html').write_text(home)
-print(f'Created {len(cases)} case pages and connected every homepage project.')
+
+print(f'Created {len(cases)} case pages.')
