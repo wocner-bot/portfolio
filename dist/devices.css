@@ -37,3 +37,8 @@
 .project-image.cargo{display:flex;align-items:center;justify-content:center;padding:66px 30px 38px}
 .project-image.cargo>img{height:auto;max-height:100%;object-fit:contain;border-radius:5px;filter:drop-shadow(0 16px 20px #0002)}
 @media(max-width:700px){.project-grid .project-image.sound-stream,.project-grid .project-image.cargo{height:330px}.project-image.cargo{padding:64px 22px 38px}}
+
+/* Left-align homepage interfaces, leaving generated artwork visible on the right. */
+.work .project-image.beeline,.work .project-image.marketing,.work .project-image.cargo{justify-content:flex-start}
+.work .project-image.beeline>img,.work .project-image.marketing>img,.work .project-image.cargo>img{width:85%;object-position:left center}
+.work .project-image .phone-pair{justify-content:flex-start}
