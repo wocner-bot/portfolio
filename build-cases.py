@@ -55,19 +55,19 @@ for index,c in enumerate(cases):
  extra_templates={'beeline-b2b':'b2b-details.html','national-parking':'parking-details.html','beeline-pricing':'pricing-details.html','beeline-marketing':'marketing-details.html'}
  if c['slug'] in extra_templates:
   gallery+=(root.parent/'templates'/extra_templates[c['slug']]).read_text()
- steps=''.join(f'<div class="case-detail"><span class="eyebrow">0{i+1}</span><h3>{escape(title)}</h3><p>{escape(body)}</p></div>' for i,(title,body) in enumerate(c['details']))
+ steps=''.join(f'<div class="case-detail"><h3>{escape(title)}</h3><p>{escape(body)}</p></div>' for i,(title,body) in enumerate(c['details']))
  figma_link=f'<a class="case-button" href="{figma+c["node"]}" target="_blank" rel="noopener noreferrer">View in Figma <span aria-hidden="true">↗</span></a>' if c['node'] else ''
  screens_link='<a href="#screens">Screens</a>' if c['images'] else ''
  body=f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{escape(c['name'])} — WOCNERG</title><meta name="description" content="{escape(c['intro'],quote=True)}"><meta name="theme-color" content="#181916">{favicon}<link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/case.css?v=20260923-covers"><link rel="stylesheet" href="/devices.css?v=20260923-pair"></head><body class="case-page case-{c['theme']}">
 <a class="skip" href="#overview">Skip to case study</a>
 <header class="header"><a href="/" class="brand" aria-label="Wocnerg home">wocnerg<span>®</span></a><nav aria-label="Main navigation"><a href="/#work">Selected work</a><a href="/#about">About</a><a class="contact-nav" href="https://t.me/wocnerg" target="_blank" rel="noopener noreferrer">Let’s talk ↗</a></nav></header>
-<main><section class="case-hero"><div class="case-breadcrumb"><a href="/#work">← All projects</a><span class="eyebrow">CASE {index+1:02d} / {len(cases):02d}</span></div><p class="eyebrow">{escape(c['category'])}</p><h1>{c['title']}</h1>{cover}<div class="case-intro"><h2>{escape(c['name'])}</h2><p>{escape(c['intro'])}</p></div></section>
+<main><section class="case-hero"><div class="case-breadcrumb"><a href="/#work">← All projects</a></div><p class="eyebrow">{escape(c['category'])}</p><h1>{c['title']}</h1>{cover}<div class="case-intro"><h2>{escape(c['name'])}</h2><p>{escape(c['intro'])}</p></div></section>
 <div class="case-toolbar"><nav aria-label="On this page"><a href="#overview">Overview</a><a href="#solution">Approach</a>{screens_link}<a href="#outcome">Outcome</a></nav>{figma_link}</div>
-<section class="case-overview section" id="overview"><aside class="case-facts"><dl>{period_fact}<div><dt>ROLE</dt><dd>{escape(c['role'])}</dd></div><div><dt>FOCUS</dt><dd>{escape(c['focus'])}</dd></div></dl></aside><div class="case-prose"><p class="eyebrow">01 / THE CHALLENGE</p><h2>What needed to change.</h2><p>{escape(c['challenge'])}</p></div></section>
-<section class="case-solution section" id="solution"><div class="case-prose"><p class="eyebrow">02 / THE APPROACH</p><h2>From problem to product.</h2><p>{escape(c['solution'])}</p></div><div class="case-details">{steps}</div></section>
+<section class="case-overview section" id="overview"><aside class="case-facts"><dl>{period_fact}<div><dt>ROLE</dt><dd>{escape(c['role'])}</dd></div><div><dt>FOCUS</dt><dd>{escape(c['focus'])}</dd></div></dl></aside><div class="case-prose"><p class="eyebrow">THE CHALLENGE</p><h2>What needed to change.</h2><p>{escape(c['challenge'])}</p></div></section>
+<section class="case-solution section" id="solution"><div class="case-prose"><p class="eyebrow">THE APPROACH</p><h2>From problem to product.</h2><p>{escape(c['solution'])}</p></div><div class="case-details">{steps}</div></section>
 {gallery}
 {related}
-<section class="case-outcome section" id="outcome"><div><p class="eyebrow">03 / THE OUTCOME</p><h2>{escape(c['metric'])}</h2><span>{escape(c['metric_label'])}</span></div><p>{escape(c['outcome'])}</p></section>
+<section class="case-outcome section" id="outcome"><div><p class="eyebrow">THE OUTCOME</p><h2>{escape(c['metric'])}</h2><span>{escape(c['metric_label'])}</span></div><p>{escape(c['outcome'])}</p></section>
 <nav class="case-pagination section" aria-label="More projects"><a href="/work/{prev['slug']}/"><span class="eyebrow">← PREVIOUS PROJECT</span><strong>{escape(prev['name'])}</strong></a><a href="/work/{nxt['slug']}/"><span class="eyebrow">NEXT PROJECT →</span><strong>{escape(nxt['name'])}</strong></a></nav>
 </main><footer><a href="/" class="brand">wocnerg<span>®</span></a><span>© 2026 ALEKSANDR GRENKOV</span><a href="/#work">All projects ↑</a></footer></body></html>'''
  target=root/'work'/c['slug']/'index.html';target.parent.mkdir(parents=True,exist_ok=True);target.write_text(body)
