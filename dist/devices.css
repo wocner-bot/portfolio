@@ -23,3 +23,10 @@
 .stack-captions{display:grid;grid-template-columns:1fr 1fr;gap:28px;padding-top:18px}.stack-captions p{font-size:14px;line-height:1.6;color:#686b60;margin:0}.stack-captions a{display:block;text-decoration:underline;text-underline-offset:4px;margin-top:8px}
 @media(max-width:700px){.project-image .phone-pair{padding:64px 26px 46px}.project-image .phone-pair>.device-mockup:nth-child(2){margin-left:-36px;transform:translateY(22px) rotate(8deg)}.project-image.beeline,.project-image.marketing{padding:64px 22px 38px}.cargo-visual{padding:24px}.case-page:not(.case-atom) .screens-grid .case-screen{padding:20px 14px}.case-phone-stack{padding:45px 20px 75px}.phone-stack-item:nth-child(2){margin-left:-42px;transform:translateY(26px) rotate(8deg)}.stack-captions{grid-template-columns:1fr;gap:20px}.screens-grid figcaption>a{display:block;margin:8px 0 0}}
 @media(prefers-reduced-motion:reduce){.project-image.beeline>img,.project-image.marketing>img{transition:none}}
+
+/* Two original Sound Stream screens cropped in CSS from the supplied slide. */
+.project-image.sound-stream .sound-device>.device-screen>.device-interface{inset:auto;left:-13.23%;top:-6.92%;width:247.58%;height:118.29%;object-fit:fill;padding:0;max-width:none;max-height:none}
+.project-image.sound-stream .sound-device--right>.device-screen>.device-interface{left:-132.32%}
+.project-image.sound-stream .phone-pair{padding-top:74px;padding-bottom:60px}
+@media(max-width:700px){.project-image.sound-stream{height:380px}.project-image.sound-stream .phone-pair{padding:70px 26px 52px}}
+.project-image.sound-stream .sound-device>.device-frame{padding:0}
