@@ -26,7 +26,7 @@ for(const [id,d] of Object.entries(designs)) for(const page of pages){
  const $=load(fs.readFileSync(path.join(dist,page),'utf8'));
  $('html').attr('data-design',id).attr('data-theme','light'); // Bulma's light scheme is explicit.
  $('body').addClass('variant');
- $('head').append(`<link rel="stylesheet" href="/vendor/${id}.css"><link rel="stylesheet" href="/designs/common.css?v=1"><link rel="stylesheet" href="/designs/${id}.css?v=1">`);
+ $('head').append(`<link rel="stylesheet" href="/vendor/${id}.css"><link rel="stylesheet" href="/designs/common.css?v=1"><link rel="stylesheet" href="/designs/${id}.css?v=${id === 'gallery' ? 2 : 1}">`);
  // Keep the picker isolated from each framework's reset and generic button rules.
  $('link[href^="/themes.css"]').remove();
  $('head').append('<link rel="stylesheet" href="/themes.css?v=5">');
