@@ -57,3 +57,13 @@ for(const [id,d] of Object.entries(designs)) for(const page of pages){
  const out=path.join(dist,'design',id,page);fs.mkdirSync(path.dirname(out),{recursive:true});fs.writeFileSync(out,$.html());
 }
 console.log(`Built ${pages.length*Object.keys(designs).length} pages with four independent UI kits.`);
+
+// Preserve the original site at an explicit route while public entry URLs use Gallery.
+for (const page of pages) {
+ const $=load(fs.readFileSync(path.join(dist,page),'utf8'));
+ $('a[href]').each((_,el)=>{const a=$(el),href=a.attr('href');if(href.startsWith('/')&&!href.startsWith('//')&&!href.startsWith('/assets/')) a.attr('href','/design/original'+href);});
+ const out=path.join(dist,'design/original',page);
+ fs.mkdirSync(path.dirname(out),{recursive:true});
+ fs.writeFileSync(out,$.html());
+}
+console.log('Preserved 8 Original pages at /design/original/.');

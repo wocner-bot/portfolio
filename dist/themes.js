@@ -6,10 +6,14 @@
     ['gallery', 'Gallery', 'UIkit · Interface gallery', '#c2c9b0'],
     ['bold', 'Bold', 'Semantic UI · Graphic portfolio', '#fc713a']
   ];
-  const match = location.pathname.match(/^\/design\/(studio|editorial|gallery|bold)(\/.*)?$/);
-  const current = match ? match[1] : 'original';
+  const match = location.pathname.match(/^\/design\/(original|studio|editorial|gallery|bold)(\/.*)?$/);
+  if (!match) {
+    location.replace('/design/gallery' + location.pathname + location.search + location.hash);
+    return;
+  }
+  const current = match[1];
   const pagePath = match ? (match[2] || '/') : location.pathname;
-  // The URL owns the selection. Original is always accessible without redirects.
+  // Public entry URLs default to Gallery; explicit design URLs remain stable.
   document.addEventListener('DOMContentLoaded', () => {
     const picker = document.createElement('div');
     picker.className = 'design-picker';
@@ -22,7 +26,7 @@
       const link = document.createElement('a');
       link.className = 'design-option';
       link.dataset.design = id;
-      link.href = (id === 'original' ? '' : `/design/${id}`) + pagePath + location.search + location.hash;
+      link.href = `/design/${id}` + pagePath + location.search + location.hash;
       if (id === current) link.setAttribute('aria-current', 'page');
       link.innerHTML = `<span class="design-swatch" style="background:${color}" aria-hidden="true"></span><span><strong>${name}</strong><small>${description}</small></span><span class="design-check" aria-hidden="true">✓</span>`;
       panel.append(link);

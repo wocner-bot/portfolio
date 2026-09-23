@@ -1,6 +1,7 @@
 # Independent portfolio designs
 
-Original remains at `/` and `/work/<slug>/`. Its body markup and `style.css`,
+Gallery is the default: `/` and `/work/<slug>/` redirect to their Gallery equivalents.
+Original remains available at `/design/original/` and its case routes. Its body markup and `style.css`,
 `devices.css`, and `case.css` are unchanged from b7529c1. Only shared design-picker
 assets are updated. No kit stylesheet is loaded by Original.
 
@@ -42,8 +43,8 @@ If an intentional future user change modifies Original, update that baseline in
 The design selector now navigates to real URLs. It preserves the current case,
 query string and section anchor. Every internal page link stays within its design.
 Browser back/forward, reload and sharing preserve the selected design via URL.
-Old localStorage color preferences are ignored, so Original always remains
-accessible directly. Alternate pages declare the corresponding Original page as
+Old localStorage color preferences are ignored, and Original remains
+accessible through its explicit design URL. Alternate pages declare the corresponding Original page as
 canonical to avoid duplicate search listings.
 
 Kit CSS and font files are vendored locally and pinned by package-lock.json.
