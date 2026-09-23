@@ -19,7 +19,10 @@ html[data-theme] .about,html[data-theme] .case-toolbar{border-color:var(--skin-l
 html[data-theme] .about-identity p span,html[data-theme] .about-text h3 span,html[data-theme] .about-text>p,html[data-theme] .experience-row p,html[data-theme] .cv-background p:not(.eyebrow){color:var(--skin-muted)}
 html[data-theme] .expertise span{border-color:var(--skin-line);background:var(--skin-panel)}
 html[data-theme] .portrait{border-radius:var(--skin-radius);box-shadow:var(--skin-shadow)}
-html[data-theme] .contact-title{color:var(--skin-accent)}
+html[data-theme] .contact{background:var(--skin-accent);color:var(--skin-accent-ink)}
+html[data-theme] .contact-title{color:inherit}
+html[data-theme] .contact-bottom{border-color:currentColor}
+html[data-theme] .contact a:focus-visible{outline-color:var(--skin-accent-ink)}
 html[data-theme] .case-page{--case-accent:var(--skin-accent);--case-surface:var(--skin-panel)}
 html[data-theme] .case-toolbar{background:var(--skin-page);color:var(--skin-text)}
 html[data-theme] .case-button{background:var(--skin-accent);color:var(--skin-accent-ink)}
