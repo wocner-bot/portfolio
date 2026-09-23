@@ -1,0 +1,19 @@
+{
+  "name": "wocnerg-portfolio-designs",
+  "private": true,
+  "scripts": {
+    "build:designs": "node tools/build-designs.mjs",
+    "check:designs": "node tools/check-designs.mjs"
+  },
+  "devDependencies": {
+    "@fontsource-variable/inter": "5.3.0",
+    "@fontsource-variable/manrope": "5.3.0",
+    "@fontsource-variable/newsreader": "5.3.0",
+    "@fontsource-variable/space-grotesk": "5.3.0",
+    "bootstrap": "5.3.8",
+    "bulma": "1.0.4",
+    "cheerio": "1.2.0",
+    "semantic-ui-css": "2.5.0",
+    "uikit": "3.25.25"
+  }
+}
